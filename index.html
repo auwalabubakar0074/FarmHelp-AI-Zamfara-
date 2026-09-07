@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmHelp AI - Zamfara</title>
+    <style>
+        body { font-family: Arial; background: #e8f5e9; padding: 20px; text-align: center; }
+        .container { background: white; padding: 30px; border-radius: 10px; max-width: 500px; margin: auto; }
+        h1 { color: #2e7d32; }
+        button { background: #4caf50; color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #388e3c; }
+        .result { margin-top: 20px; padding: 15px; background: #f1f8e9; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌾 FarmHelp AI</h1>
+        <p>Taimako ga Manoman Zamfara</p>
+        
+        <input type="text" id="town" placeholder="Saka sunan garinku" style="padding:10px; width:80%;">
+        <br><br>
+        <button onclick="getAdvice()">Nemi Shawara</button>
+        
+        <div class="result" id="result">
+            <p>Shawarwari kan noma da yanayi za su bayyana anan</p>
+        </div>
+    </div>
+
+    <script>
+        function getAdvice() {
+            let town = document.getElementById('town').value;
+            if(town == "") {
+                alert("Da fatan a saka sunan gari");
+                return;
+            }
+            document.getElementById('result').innerHTML = `
+                <h3>Shawara ga ${town}</h3>
+                <p>✅ Lokaci yayi da za a shuka gero da masara</p>
+                <p>🌧️ Ana sa ran ruwan sama a cikin kwanaki 3 masu zuwa</p>
+                <p>⚠️ Duba shukarku don cututtuka saboda zafi</p>
+            `;
+        }
+    </script>
+</body>
+</html>
